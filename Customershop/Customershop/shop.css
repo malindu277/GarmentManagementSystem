@@ -1,0 +1,39 @@
+.item-image {
+    width: 200px; 
+    height: 200px;
+}
+
+
+.round-img {
+    border-radius: 10px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.item {
+    width: calc(20% - 20px); 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.item-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.item h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.item p {
+    margin: 5px 0;
+    font-size: 14px;
+}

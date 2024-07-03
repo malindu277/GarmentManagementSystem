@@ -1,0 +1,61 @@
+let shops = [
+    { id: 1, name: "Thilakawardhana", address: "123 Main St, Colombo", telephone: "0112345678", logo: "logo1.png" },
+    { id: 2, name: "Kandy", address: "456 Park Ave, Kandy", telephone: "0812345678", logo: "logo2.png" },
+    { id: 3, name: "Prasad", address: "789 Elm St, Galle", telephone: "0912345678", logo: "logo3.png" }
+];
+
+// Populate shop list
+window.addEventListener('DOMContentLoaded', (event) => {
+    const shopList = document.getElementById('shopList');
+
+    shops.forEach(shop => {
+        const shopCard = `
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="${shop.logo}" class="card-img-top" alt="${shop.name} Logo">
+                    <div class="card-body">
+                        <h5 class="card-title">${shop.name}</h5>
+                        <p class="card-text">Shop ID: ${shop.id}</p>
+                        <p class="card-text">Address: ${shop.address}</p>
+                        <p class="card-text">Telephone: ${shop.telephone}</p>
+                        <button class="btn btn-primary" onclick="selectShop(${shop.id})">Select</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        shopList.innerHTML += shopCard;
+    });
+});
+
+// Add Shop
+function addShop() {
+    const shopName = document.getElementById('shopName').value;
+    const address = document.getElementById('address').value;
+    const telephone = document.getElementById('telephone').value;
+    const logo = document.getElementById('logo').value;
+    const newShopId = shops.length + 1;
+
+    const newShop = {
+        id: newShopId,
+        name: shopName,
+        address: address,
+        telephone: telephone,
+        logo: logo
+    };
+
+    shops.push(newShop);
+    location.reload(); // Refresh the page to display the new shop
+}
+
+// Select Shop
+function selectShop(shopId) {
+    console.log(`Selected Shop ID: ${shopId}`);
+    // Logic to select a shop
+}
+
+// Delete Shop (This function can be implemented based on your requirements)
+document.getElementById('deleteShopBtn').addEventListener('click', function() {
+    console.log("Delete Shop button clicked");
+    // Logic to delete a shop
+});

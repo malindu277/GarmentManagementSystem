@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+     
+        .custom-header {
+            background-color: #000080; 
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #343a40; 
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .logout-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="custom-header py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    <img src="Screenshot 2024-03-29 103430.png" alt="Dil Fashion Logo" height="50" class="img-fluid rounded-circle ">
+                </div>
+                <div class="col-md-8 text-center text-md-left">
+                    <h1 class="text-white mb-0">Dil Fashion</h1>
+                    <p class="lead text-white mb-0">Your Fashion Destination</p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <form method="POST" action=""> 
+                        <button type="submit" class="btn btn-dark logout-btn" name="logout">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    
+    <main class="container mt-5">
+        <h2 class="text-center mb-4">Employee Dashboard</h2>
+    
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="view-3d-businessman.png" class="card-img" alt="Profile Picture">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Profile</h5>
+                                <p class="card-text">This is where you can view your profile information.</p>
+                                <a href="empPro.php" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="2151027584.png" class="card-img" alt="Salary Picture">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Salary</h5>
+                                <p class="card-text">This is where you can view your salary details.</p>
+                                <a href="Salary.php" class="btn btn-primary">View Salary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Report Analysis -->
+            <div class="col-md-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="report1.jpg" class="card-img" alt="Report Analysis Picture">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Report Analysis</h5>
+                                <p class="card-text">This is where you can view analysis reports.</p>
+                                <a href="empreport.php" class="btn btn-primary">View Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <div class="container mt-3 mb-5">
+        <div class="text-center">
+            <a href="home.html" class="btn btn-secondary">Back</a>
+        </div>
+    </div>
+
+  
+    <footer>
+        <div class="container">
+            <p>© 2024 Employee Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

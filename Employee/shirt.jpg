@@ -1,0 +1,16 @@
+html,
+
+body {
+    height: 100%;
+    background-color: #f4f4f4;
+}
+
+.container-fluid {
+    min-height: 100%;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+

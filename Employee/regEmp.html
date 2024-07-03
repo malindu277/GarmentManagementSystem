@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="regEmp.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    <img src="Screenshot 2024-03-29 103430.png" alt="Dil Fashion Logo" height="50" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-md-8 text-center text-md-left">
+                    <h1 class="text-white mb-0">Dil Fashion</h1>
+                    <p class="lead text-white mb-0">Your Fashion Destination</p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <form method="POST" action="Adminlogin.php">
+                        <input type="hidden" name="logout" value="true"> <!-- Add a hidden input field to indicate logout -->
+                        <button type="submit" class="btn btn-dark logout-btn">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <h2 class="text-primary text-center mb-4">Welcome to Employee Portal</h2>
+                        
+                        <form action="insert.php" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Name:</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="age"><i class="fas fa-birthday-cake"></i> Age:</label>
+                                    <input type="number" class="form-control" id="age" name="age" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="DOB"><i class="fas fa-calendar-alt"></i> Date of Birth:</label>
+                                    <input type="date" class="form-control" id="DOB" name="DOB" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="NIC"><i class="fas fa-id-card"></i> NIC:</label>
+                                    <input type="text" class="form-control" id="NIC" name="NIC" maxlength="12" title="NIC should not exceed 12 characters" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address"><i class="fas fa-map-marker-alt"></i> Address:</label>
+                                <input type="text" class="form-control" id="address" name="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_no"><i class="fas fa-phone"></i> Contact Number:</label>
+                                <input type="text" class="form-control" id="contact_no" name="contact_no" required maxlength="10">
+                                <small id="contact_no_error" class="text-danger"></small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="username"><i class="fas fa-user"></i> Username:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><i class="fas fa-lock"></i> Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile_photo"><i class="fas fa-image"></i> Profile Photo:</label>
+                                <input type="file" class="form-control-file" id="profile_photo" name="profile_photo" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-check"></i> Submit</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>© 2024 Employee Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+
+    document.getElementById('DOB').addEventListener('change', function() {
+        var dob = new Date(this.value);
+        var today = new Date();
+        var age = today.getFullYear() - dob.getFullYear();
+        var m = today.getMonth() - dob.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
+        document.getElementById('age').value = age;
+    });
+        
+        document.getElementById('contact_no').addEventListener('input', function(event) {
+            const input = event.target;
+            input.value = input.value.replace(/\D/g, ''); 
+            if (input.value.length > 10) {
+                input.value = input.value.slice(0, 10); 
+            }
+        });
+    </script>
+</body>
+</html>
